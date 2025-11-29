@@ -16,7 +16,7 @@ typedef struct
     struct pixel *pix;
 } pixmap;
 
-int pixmap_init(pixmap *mp, int l, int h);
+int pixmap_initIM(pixmap *mp, int l, int h);
 int pixmap_release(pixmap *mp);
 void pixmap_Carre(pixmap *mp, unsigned char r, unsigned char g, unsigned char b);
 int pixmap_initFichier(pixmap *mp, char* path);
