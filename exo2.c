@@ -15,7 +15,7 @@ int pixmap_initIM(pixmap *pm, int l, int h)
         return 1;
     }
 
-    return 0;   // <-- important !
+    return 0;
 }
 
 // Libere l'espace
@@ -98,7 +98,7 @@ int main()
         return 1;
     }
 
-    pixel color = {255, 0, 0};
+    pixel color = {255, 182, 193};
     pixel fond = {0, 0, 0};
 
     cercle(&pm, l/2, h/2, 100, color, fond);
