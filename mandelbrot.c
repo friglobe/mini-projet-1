@@ -24,7 +24,7 @@ int convergence(complexe z)
         u.im = 2 *u.re*u.im+z.im;
         u.re =temp;
     }
-    return 0;
+    return MAX_ITER;
 }
 
 couleur calcCouleur(int c)
@@ -32,11 +32,17 @@ couleur calcCouleur(int c)
     couleur col;
     col.r = 0;
     col.g = 3*c;
-    if (col.g > 255)
-    {
-        col.g =255;
-    }
     col.b = 255;
+    if (col.g >255)
+    {
+        col.g = 255;
+    }
+    
+    if (c == MAX_ITER)
+    {
+        col.g =col.r = col.b = 255;
+        return col;
+    }
     return col;
     
 }
@@ -63,14 +69,14 @@ void genererImage(image im, const char *nomFichier)
             int c = convergence(z);
             couleur col = calcCouleur(c);
 
-            fprintf(f,"%d %d %d",col.r,col.g,col.b);
+            fprintf(f,"%d %d %d ",col.r,col.g,col.b);
         }
         fprintf(f,"\n");
     }
     fclose(f);
     printf("Image générée : %s\n",nomFichier);
 }
-void main()
+int main()
 {
     image im;
 
