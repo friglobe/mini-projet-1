@@ -62,7 +62,7 @@ void genererImage(image im, const char *nomFichier)
             int c = convergence(z);
             couleur col = calcCouleur(c);
 
-            fprintf(f, "%d %d %d", col.r, col.g, col.b);
+            fprintf(f, "%d %d %d ", col.r, col.g, col.b);
         }
         fprintf(f, "\n");
     }
@@ -103,9 +103,9 @@ void main()
         hauteurY =largeurX * (hauteur / largeur);
         
         x1 = centreX - largeurX /2;
-        x2 = centreX - largeurX /2;
+        x2 = centreX + largeurX /2;
 
-        y2 =centreY - hauteurY /2;
+        y2 =centreY + hauteurY /2;
         y1 = centreY - hauteurY /2;
 
     }
